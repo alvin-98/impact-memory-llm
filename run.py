@@ -15,6 +15,7 @@ import logging
 from tqdm import tqdm
 import json
 import re
+import textwrap
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -200,7 +201,8 @@ def orchestrator(eval_type: str, num_tasks: int = None):
         records = records[:num_tasks]
     total_tasks = len(records)
     logger.info(f"Starting orchestrator: eval_type={eval_type}, tasks={total_tasks}")
-    pm_logs = []
+    pm_code_agent_check_logs = []
+    pm_review_agent_check_logs = []
     for idx, record in enumerate(tqdm(records, desc="Orchestrator", unit="task"), start=1):
         requirement = get_req(record)
         logger.info(f"[Orch] Task {idx}/{total_tasks}: '{requirement[:50]}...' (truncated)")
@@ -213,8 +215,8 @@ def orchestrator(eval_type: str, num_tasks: int = None):
             # patch test string to match generated function name
             m = re.match(r"\s*assert\s+([A-Za-z_]\w*)\s*\(", tc)
             if m:
-                old_name = m.group(1)
-                tc = tc.replace(old_name + "(", f"{code_resp.function_name}(")
+                old = m.group(1)
+                tc = tc.replace(old + "(", f"{code_resp.function_name}(")
                 
             try:
                 exec(tc, namespace)
@@ -222,7 +224,7 @@ def orchestrator(eval_type: str, num_tasks: int = None):
             except:
                 ds_fail += 1
 
-        pm_logs.append({
+        pm_code_agent_check_logs.append({
             "eval_type": eval_type,
             "task_id": record.get(task_id_key, idx),
             "requirement": requirement,
@@ -231,13 +233,58 @@ def orchestrator(eval_type: str, num_tasks: int = None):
             "timestamp": datetime.datetime.now(),
         })
 
-    df_pm = pd.DataFrame(pm_logs)
-    pm_file = "pm_logs.csv"
-    if os.path.exists(pm_file):
-        df_pm.to_csv(pm_file, mode="a", header=False, index=False)
+        # reference-code review-agent check
+        if eval_type == "mbpp":
+            ref_code = record.get("code", "")
+        else:
+            ref_code = record.get("prompt", "") + "\n" + record.get("canonical_solution", "")
+        clean = textwrap.dedent(ref_code)
+        ns_ref = {}
+        exec(clean, ns_ref)
+        # discover ref fn name
+        for line in clean.splitlines():
+            if line.strip().startswith("def "):
+                ref_fn_name = line.strip().split()[1].split("(")[0]
+                break
+        else:
+            raise ValueError("Could not parse ref fn name")
+        ref_fn = ns_ref[ref_fn_name]
+        review_pass = review_fail = 0
+        for tc in review_resp.test_cases:
+            parts = tc.split("(", 1)
+            prefix = parts[0].strip()
+            if prefix.startswith("assert "):
+                old = prefix[len("assert "):]
+                tc = tc.replace(old + "(", f"{ref_fn_name}(")
+            try:
+                exec(tc, {ref_fn_name: ref_fn})
+                review_pass += 1
+            except:
+                review_fail += 1
+        pm_review_agent_check_logs.append({
+            "eval_type": eval_type,
+            "task_id": record.get(task_id_key, idx),
+            "review_pass": review_pass,
+            "review_fail": review_fail,
+            "timestamp": datetime.datetime.now(),
+        })
+
+    df_code = pd.DataFrame(pm_code_agent_check_logs)
+    code_file = "pm_code_agent_check.csv"
+    if os.path.exists(code_file):
+        df_code.to_csv(code_file, mode="a", header=False, index=False)
     else:
-        df_pm.to_csv(pm_file, index=False)
-    print(f"PM logged {len(pm_logs)} tasks to {pm_file}")
+        df_code.to_csv(code_file, index=False)
+    print(f"Code-agent checks logged {len(pm_code_agent_check_logs)} tasks to {code_file}")
+
+    # write review-agent check logs
+    df_r = pd.DataFrame(pm_review_agent_check_logs)
+    review_file = "pm_review_agent_check.csv"
+    if os.path.exists(review_file):
+        df_r.to_csv(review_file, mode="a", header=False, index=False)
+    else:
+        df_r.to_csv(review_file, index=False)
+    print(f"Review-agent checks logged {len(pm_review_agent_check_logs)} tasks to {review_file}")
 
 def main():
     parser = argparse.ArgumentParser()

@@ -1,0 +1,11 @@
+eval_type,task_id,requirement,dataset_pass,dataset_fail,timestamp
+mbpp,1,"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].",3,0,2025-05-04 02:07:44.491539
+mbpp,2,Write a function to find the similar elements from the given two tuple lists.,0,3,2025-05-04 02:07:47.507738
+mbpp,3,Write a python function to identify non-prime numbers.,0,3,2025-05-04 02:07:50.594914
+mbpp,4,Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,3,0,2025-05-04 02:07:53.644578
+mbpp,5,Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,3,0,2025-05-04 02:07:56.540093
+mbpp,6,Write a python function to check whether the two numbers differ at one bit position only or not.,3,0,2025-05-04 02:07:58.836847
+mbpp,7,Write a function to find all words which are at least 4 characters long in a string by using regex.,3,0,2025-05-04 02:08:02.224859
+mbpp,8,Write a function to find squares of individual elements in a list using lambda function.,3,0,2025-05-04 02:08:41.759542
+mbpp,9,Write a python function to find the minimum number of rotations required to get the same string.,3,0,2025-05-04 02:08:45.740420
+mbpp,10,Write a function to get the n smallest items from a dataset.,3,0,2025-05-04 02:08:50.032604

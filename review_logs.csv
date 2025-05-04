@@ -595,3 +595,96 @@ Write a function to get the n smallest items from a dataset.,get_n_smallest,"ass
 Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([1, 2, 3, 4, 5], -1) == []",pass,,,2025-05-04 00:59:38.137594
 Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([1, 1, 1, 1, 1], 1) == [1]",pass,,,2025-05-04 00:59:38.137630
 Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([3, 1, 4, 1, 5, 9, 2, 6], 4) == [1, 1, 2, 3]",pass,,,2025-05-04 00:59:38.137674
+"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].",min_cost_path,"assert min_cost_path([[1, 2, 3], [4, 8, 2], [1, 5, 3]], 2, 2) == 8",pass,,,2025-05-04 02:07:44.474385
+"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].",min_cost_path,"assert min_cost_path([[1, 2, 3], [4, 8, 2], [1, 5, 3]], 1, 1) == 9",pass,,,2025-05-04 02:07:44.474460
+"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].",min_cost_path,"assert min_cost_path([[1, 2, 3]], 0, 2) == 6",pass,,,2025-05-04 02:07:44.474507
+"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].",min_cost_path,"assert min_cost_path([[4,5,6],[1,2,3],[7,8,9]], 2,2) == 21",fail,,,2025-05-04 02:07:44.474577
+"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].",min_cost_path,"assert min_cost_path([[10,20,30],[5,10,40],[1,5,9]], 2,2) == 24",fail,,,2025-05-04 02:07:44.474641
+"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].",min_cost_path,"assert min_cost_path([[1]], 0, 0) == 1",pass,,,2025-05-04 02:07:44.474681
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 2), (3, 4), (5, 6)], [(5, 6), (7, 8), (1, 2)]) == [(1, 2), (5, 6)]",pass,,,2025-05-04 02:07:47.505389
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 2), (3, 4)], [(5, 6), (7, 8)]) == []",pass,,,2025-05-04 02:07:47.505430
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 2), (3, 4), (5, 6)], [(1, 2), (3, 4), (5, 6)]) == [(1, 2), (3, 4), (5, 6)]",pass,,,2025-05-04 02:07:47.505482
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 2)], [(1, 2)]) == [(1, 2)]",pass,,,2025-05-04 02:07:47.505511
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 2)], [(2, 1)]) == []",pass,,,2025-05-04 02:07:47.505535
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([], [(1, 2)]) == []",pass,,,2025-05-04 02:07:47.505558
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 2)], []) == []",pass,,,2025-05-04 02:07:47.505578
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([], []) == []",pass,,,2025-05-04 02:07:47.505595
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 'a'), (3, 'b')], [(3, 'b'), (1, 'a')]) == [(3, 'b'), (1, 'a')]",fail,,,2025-05-04 02:07:47.505637
+Write a function to find the similar elements from the given two tuple lists.,find_similar_elements,"assert find_similar_elements([(1, 2, 3), (4, 5, 6)], [(4, 5, 6), (7, 8, 9)]) == [(4, 5, 6)]",pass,,,2025-05-04 02:07:47.505677
+Write a python function to identify non-prime numbers.,find_non_primes,"assert find_non_primes([2, 3, 4, 5, 6, 7, 8, 9, 10]) == [4, 6, 8, 9, 10]",pass,,,2025-05-04 02:07:50.592824
+Write a python function to identify non-prime numbers.,find_non_primes,"assert find_non_primes([11, 13, 17, 19]) == []",pass,,,2025-05-04 02:07:50.592868
+Write a python function to identify non-prime numbers.,find_non_primes,"assert find_non_primes([1, 2, 3, 4, 5]) == [1, 4]",pass,,,2025-05-04 02:07:50.592896
+Write a python function to identify non-prime numbers.,find_non_primes,"assert find_non_primes([0, 1, 2]) == [0, 1]",pass,,,2025-05-04 02:07:50.592919
+Write a python function to identify non-prime numbers.,find_non_primes,"assert find_non_primes([-2, -1, 0, 1, 2, 3, 4]) == [-2, -1, 0, 1, 4]",pass,,,2025-05-04 02:07:50.592952
+Write a python function to identify non-prime numbers.,find_non_primes,"assert find_non_primes([121, 169, 289]) == [121, 169, 289]",pass,,,2025-05-04 02:07:50.592978
+Write a python function to identify non-prime numbers.,find_non_primes,"assert find_non_primes([2, 4, 2, 4, 2]) == [4, 4]",pass,,,2025-05-04 02:07:50.593003
+Write a python function to identify non-prime numbers.,find_non_primes,assert find_non_primes([]) == [],pass,,,2025-05-04 02:07:50.593019
+Write a python function to identify non-prime numbers.,find_non_primes,assert find_non_primes([1]) == [1],pass,,,2025-05-04 02:07:50.593037
+Write a python function to identify non-prime numbers.,find_non_primes,assert find_non_primes([2]) == [],pass,,,2025-05-04 02:07:50.593054
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([3, 1, 4, 1, 5, 9, 2, 6], 3) == [9, 6, 5]",pass,,,2025-05-04 02:07:53.641777
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([1, 2, 3, 4, 5], 1) == [5]",pass,,,2025-05-04 02:07:53.641827
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([5, 4, 3, 2, 1], 5) == [5, 4, 3, 2, 1]",pass,,,2025-05-04 02:07:53.641870
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([1, 1, 1, 1, 1], 1) == [1]",pass,,,2025-05-04 02:07:53.641905
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([1, 1, 1, 1, 1], 3) == [1, 1, 1]",pass,,,2025-05-04 02:07:53.641946
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([], 3) == []",pass,,,2025-05-04 02:07:53.641972
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([1, 2, 3], 0) == []",pass,,,2025-05-04 02:07:53.642002
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([-1, -2, -3, -4, -5], 2) == [-1, -2]",pass,,,2025-05-04 02:07:53.642042
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([10, 5, 8, 1, 9, 2], 4) == [10, 9, 8, 5]",pass,,,2025-05-04 02:07:53.642083
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.,find_largest_numbers,"assert find_largest_numbers([1, 2, 3, 4, 5], 6) == [5, 4, 3, 2, 1]",pass,,,2025-05-04 02:07:53.642122
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(0) == 1,error,list assignment index out of range,,2025-05-04 02:07:56.537667
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(1) == 0,pass,,,2025-05-04 02:07:56.537694
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(2) == 3,pass,,,2025-05-04 02:07:56.537715
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(3) == 0,pass,,,2025-05-04 02:07:56.537734
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(4) == 11,pass,,,2025-05-04 02:07:56.537754
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(6) == 41,pass,,,2025-05-04 02:07:56.537775
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(8) == 153,pass,,,2025-05-04 02:07:56.537794
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(10) == 571,pass,,,2025-05-04 02:07:56.537814
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(12) == 2131,pass,,,2025-05-04 02:07:56.537834
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(14) == 7953,pass,,,2025-05-04 02:07:56.537854
+Write a function to find the number of ways to fill it with 2 x 1 dominoes for the given 3 x n board.,count_domino_tilings,assert count_domino_tilings(16) == 29681,pass,,,2025-05-04 02:07:56.537875
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(1, 0) == True",pass,,,2025-05-04 02:07:58.834256
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(1, 2) == False",pass,,,2025-05-04 02:07:58.834326
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(2, 3) == True",pass,,,2025-05-04 02:07:58.834369
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(5, 4) == True",pass,,,2025-05-04 02:07:58.834391
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(10, 11) == True",pass,,,2025-05-04 02:07:58.834412
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(7, 3) == False",fail,,,2025-05-04 02:07:58.834437
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(15, 7) == False",fail,,,2025-05-04 02:07:58.834461
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(0, 0) == False",fail,,,2025-05-04 02:07:58.834484
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(16, 0) == False",fail,,,2025-05-04 02:07:58.834507
+Write a python function to check whether the two numbers differ at one bit position only or not.,differ_at_one_bit,"assert differ_at_one_bit(16,17)==True",pass,,,2025-05-04 02:07:58.834529
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('This is a test string with some words') == ['This', 'test', 'string', 'with', 'some', 'words']",pass,,,2025-05-04 02:08:02.222262
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('The quick brown fox jumps over the lazy dog') == ['quick', 'brown', 'jumps', 'over', 'lazy']",pass,,,2025-05-04 02:08:02.222335
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('hello world programming python') == ['hello', 'world', 'programming', 'python']",pass,,,2025-05-04 02:08:02.222394
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('one two three four five six seven eight nine ten') == ['three', 'four', 'five', 'seven', 'eight', 'nine']",pass,,,2025-05-04 02:08:02.222454
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('a bb ccc dddd eeeee ffffff') == ['dddd', 'eeeee', 'ffffff']",pass,,,2025-05-04 02:08:02.222500
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('1234 abcde 12345 abcdef') == ['1234', 'abcde', '12345', 'abcdef']",pass,,,2025-05-04 02:08:02.222554
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('Short words like a an in are ignored') == ['Short', 'words', 'like', 'ignored']",pass,,,2025-05-04 02:08:02.222610
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,assert find_long_words('') == [],pass,,,2025-05-04 02:08:02.222649
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('   Long    words   with   spaces   ') == ['Long', 'words', 'with', 'spaces']",pass,,,2025-05-04 02:08:02.222697
+Write a function to find all words which are at least 4 characters long in a string by using regex.,find_long_words,"assert find_long_words('This string has some punctuation. Like, commas, and periods.') == ['This', 'string', 'some', 'punctuation', 'Like', 'commas', 'periods']",pass,,,2025-05-04 02:08:02.222762
+Write a function to find squares of individual elements in a list using lambda function.,square_list,"assert square_list([1, 2, 3, 4, 5]) == [1, 4, 9, 16, 25]",pass,,,2025-05-04 02:08:41.757479
+Write a function to find squares of individual elements in a list using lambda function.,square_list,"assert square_list([-1, 0, 1]) == [1, 0, 1]",pass,,,2025-05-04 02:08:41.757520
+Write a function to find squares of individual elements in a list using lambda function.,square_list,assert square_list([]) == [],pass,,,2025-05-04 02:08:41.757544
+Write a function to find squares of individual elements in a list using lambda function.,square_list,"assert square_list([2.5, 3.5]) == [6.25, 12.25]",pass,,,2025-05-04 02:08:41.757577
+Write a function to find squares of individual elements in a list using lambda function.,square_list,"assert square_list([1, -2, 3, -4, 5]) == [1, 4, 9, 16, 25]",pass,,,2025-05-04 02:08:41.757613
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('geeks') == 5,pass,,,2025-05-04 02:08:45.738070
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('aaaa') == 1,pass,,,2025-05-04 02:08:45.738110
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('abab') == 2,pass,,,2025-05-04 02:08:45.738140
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('abcab') == 5,pass,,,2025-05-04 02:08:45.738169
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('') == 0,pass,,,2025-05-04 02:08:45.738197
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('a') == 1,pass,,,2025-05-04 02:08:45.738223
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('hello') == 5,pass,,,2025-05-04 02:08:45.738270
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('qwerty') == 6,pass,,,2025-05-04 02:08:45.738304
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('aba') == 3,pass,,,2025-05-04 02:08:45.738331
+Write a python function to find the minimum number of rotations required to get the same string.,min_rotations,assert min_rotations('abcabc') == 3,pass,,,2025-05-04 02:08:45.738380
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([1, 2, 3, 4, 5], 3) == [1, 2, 3]",pass,,,2025-05-04 02:08:50.030300
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([5, 4, 3, 2, 1], 3) == [1, 2, 3]",pass,,,2025-05-04 02:08:50.030349
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([5, 4, 3, 2, 1], 5) == [1, 2, 3, 4, 5]",pass,,,2025-05-04 02:08:50.030380
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([5, 4, 3, 2, 1], 6) == [1, 2, 3, 4, 5]",pass,,,2025-05-04 02:08:50.030408
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([1, 2, 3], 0) == []",pass,,,2025-05-04 02:08:50.030430
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([1, 2, 3], -1) == []",pass,,,2025-05-04 02:08:50.030452
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([], 3) == []",pass,,,2025-05-04 02:08:50.030470
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([3, 1, 4, 1, 5, 9, 2, 6], 4) == [1, 1, 2, 3]",pass,,,2025-05-04 02:08:50.030503
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest([3.1, 1.2, 4.3, 1.4, 5.5, 9.6, 2.7, 6.8], 4) == [1.2, 1.4, 2.7, 3.1]",pass,,,2025-05-04 02:08:50.030543
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest(['c', 'a', 'b', 'd'], 2) == ['a', 'b']",pass,,,2025-05-04 02:08:50.030572
+Write a function to get the n smallest items from a dataset.,get_n_smallest,"assert get_n_smallest(['c', 'a', 'b', 'd'], 5) == ['a', 'b', 'c', 'd']",pass,,,2025-05-04 02:08:50.030599
